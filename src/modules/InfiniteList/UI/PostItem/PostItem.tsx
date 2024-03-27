@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { TPostItem } from '.';
 import styles from './PostItem.module.css';
 
-export function PostItem({ title, reactions, body, tags }: TPostItem) {
+export const PostItem = memo(({ title, reactions, body, tags }: TPostItem) => {
   return (
     <div className={styles.post}>
       <h4 className={styles.title}>{title}</h4>
@@ -21,4 +22,4 @@ export function PostItem({ title, reactions, body, tags }: TPostItem) {
       </div>
     </div>
   );
-}
+});
